@@ -12,5 +12,5 @@ int main(void) {
 
     utils::kill();
 
-    return EXIT_SUCCESS;
+    return 0;
 }
