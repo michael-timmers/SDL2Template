@@ -6,25 +6,21 @@ namespace eventHandler {
 SDL_Event event;
 
 bool handleInput() {
-    while (true) {
-        if (SDL_PollEvent(&event)) {
-            switch (event.type) {
-                case SDL_QUIT:
-                    return false;
-                    break;
-                case SDL_KEYDOWN:
-                    switch (event.key.keysym.sym) {
-                            // arrows and space go here
-                        default:
-                            break;
-                    }
-                    break;
+    SDL_WaitEvent(&event);
+
+    switch (event.type) {
+        case SDL_QUIT:
+            return false;
+            break;
+        case SDL_KEYDOWN:
+            switch (event.key.keysym.sym) {
+                    // arrows and space go here
                 default:
                     break;
             }
-            return true;
-        }
-        SDL_Delay(50);
+            break;
+        default:
+            break;
     }
 }
 
