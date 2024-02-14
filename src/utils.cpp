@@ -5,7 +5,7 @@
 namespace utils {
 
 void intro() {
-    std::cout << "XYVisualiser\n";
+    std::cout << "SDL2Template\n";
 }
 
 int init() {
