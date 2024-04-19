@@ -1,11 +1,7 @@
 #include "headers.hpp"
+#include "eventHandler.hpp"
 
-namespace eventHandler {
-
-// SDL variable
-SDL_Event event;
-
-bool handleInput() {
+bool EventHandler::handleInput() {
     SDL_WaitEvent(&event);
 
     switch (event.type) {
@@ -23,5 +19,3 @@ bool handleInput() {
             break;
     }
 }
-
-}  // namespace eventHandler

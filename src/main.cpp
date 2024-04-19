@@ -1,16 +1,16 @@
 
-#include "utils.hpp"
+#include "appmanager.hpp"
 
 int main(void) {
-    utils::intro();  // just messages
+    AppManager app;
+    app.intro();  // just messages
 
-    // check if every SDL object was initialised correctly.
-    if (utils::init() == 0) {
-        // the rendering loop
-        utils::run();
+    // check if SDL was initialised correctly.
+    if (app.init() == 0) {
+        app.run();
     }
 
-    utils::kill();
+    app.quit();
 
     return 0;
 }

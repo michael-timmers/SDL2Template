@@ -1,28 +1,36 @@
 #pragma once
 #include <vector>
 
-namespace renderer {
+#include "headers.hpp"
 
-// set up renderer and window
-int init();
+class Renderer {
+    // SDL variables
+    SDL_Renderer* renderer;
+    SDL_Window* window;
 
-// clears the renderer
-void clear();
+    // changable.
+    SDL_Color backgroundColour = {255, 255, 255};
+    int lineThickness = 6;
 
-void renderCopy(SDL_Texture* tex, const SDL_Rect* src, const SDL_Rect* dst);
+   public:
+    // set up renderer and window
+    Renderer();
 
-SDL_Texture* createTexture(Uint32 format, int access, int w, int h);
+    // clears the renderer
+    void clear();
 
-// returns a texture that was made from a surface
-SDL_Texture* CreateTextureFromSurface(SDL_Surface* surface);
+    void renderCopy(SDL_Texture* tex, const SDL_Rect* src, const SDL_Rect* dst);
 
-// changes the render target
-void changeRendrTarget(SDL_Texture* targetTex = NULL);
+    SDL_Texture* createTexture(Uint32 format, int access, int w, int h);
 
-// presents the renderer
-void present();
+    // returns a texture that was made from a surface
+    SDL_Texture* CreateTextureFromSurface(SDL_Surface* surface);
 
-// destroys the variables
-void kill();
+    // changes the render target
+    void changeRendrTarget(SDL_Texture* targetTex = NULL);
 
-}  // namespace renderer
+    // presents the renderer
+    void present();
+
+    ~Renderer();
+};

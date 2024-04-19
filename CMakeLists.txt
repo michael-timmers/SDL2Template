@@ -30,8 +30,8 @@ add_executable(SDL2Template
 	src/renderer.hpp
 	src/timer.cpp
 	src/timer.hpp
-	src/utils.cpp
-	src/utils.hpp
+	src/appmanager.cpp
+	src/appmanager.hpp
 )
 
 target_link_libraries(SDL2Template ${SDL2_LIBRARIES} ${SDL2_TTF_LIBRARIES} ${SDL2_IMAGE_LIBRARIES})
