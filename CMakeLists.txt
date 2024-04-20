@@ -22,16 +22,10 @@ include_directories(${SDL2_INCLUDE_DIRS} ${SDL2_TTF_INCLUDE_DIRS} ${SDL2_IMAGE_I
 
 add_executable(SDL2Template
 	src/eventHandler.cpp
-	src/eventHandler.hpp
-	src/globals.hpp
-	src/headers.hpp
 	src/main.cpp
 	src/renderer.cpp
-	src/renderer.hpp
 	src/timer.cpp
-	src/timer.hpp
 	src/appmanager.cpp
-	src/appmanager.hpp
 )
 
 target_link_libraries(SDL2Template ${SDL2_LIBRARIES} ${SDL2_TTF_LIBRARIES} ${SDL2_IMAGE_LIBRARIES})

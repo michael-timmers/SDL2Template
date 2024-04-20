@@ -2,9 +2,9 @@
 
 This is a general purpose template for any new SDL2 project.
 
-It has a basic event loop that only updates when an event occurs, and a renderer namespace with some helpful functions. 
+It has a basic event loop that only updates when an event occurs, and renderer and timer classes with some helpful functions. 
 
-##CMake compiling (recommended)
+##CMake compiling
 
 CMake modules are provided for SDL2, SDL2_ttf and SDL2_image. Uncomment their headers in 'headers.hpp'.
 
