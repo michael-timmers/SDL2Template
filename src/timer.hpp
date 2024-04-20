@@ -2,9 +2,12 @@
 
 #include <chrono>
 
-namespace timer {
-void start();
-void stop();
-std::chrono::nanoseconds result();
+class Timer {
+    std::chrono::time_point<std::chrono::high_resolution_clock, std::chrono::nanoseconds> first;
+    std::chrono::time_point<std::chrono::high_resolution_clock, std::chrono::nanoseconds> last;
 
-}  // namespace timer
+   public:
+    void start();
+    void stop();
+    std::chrono::nanoseconds result();
+};

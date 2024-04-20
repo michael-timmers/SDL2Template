@@ -1,21 +1,15 @@
 #include <chrono>
 
-using namespace std::chrono;
+#include "timer.hpp"
 
-namespace timer {
-time_point<high_resolution_clock, nanoseconds> first;
-time_point<high_resolution_clock, nanoseconds> last;
-
-void start() {
-    first = high_resolution_clock::now();
+void Timer::start() {
+    first = std::chrono::high_resolution_clock::now();
 }
 
-void stop() {
-    last = high_resolution_clock::now();
+void Timer::stop() {
+    last = std::chrono::high_resolution_clock::now();
 }
 
-nanoseconds result() {
-    return duration_cast<nanoseconds>(last - first);
+std::chrono::nanoseconds Timer::result() {
+    return std::chrono::duration_cast<std::chrono::nanoseconds>(last - first);
 }
-
-}  // namespace timer
