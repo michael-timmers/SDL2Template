@@ -6,6 +6,7 @@ It has a basic event loop that only updates when an event occurs, and renderer a
 
 ## Requirements
 -SDL2 libraries installed locally. 
+- makefile currently links to apple silicon path for installed locations of libraries, this should be changed depending on OS requirements.
 
 ## Compiling
 run make in the root folder. The output will be created in the bin folder.
