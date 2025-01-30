@@ -6,8 +6,8 @@ PROGRAM_CXX_OBJS := ${PROGRAM_CXX_SRCS:.cpp=.o}
 PROGRAM_OBJS := $(PROGRAM_CXX_OBJS)
 
 # change this depending on OS
-PROGRAM_INCLUDE_DIRS := /opt/homebrew/include/SDL2
-PROGRAM_LIBRARY_DIRS := /opt/homebrew/lib
+PROGRAM_INCLUDE_DIRS := /usr/include /opt/homebrew/include
+PROGRAM_LIBRARY_DIRS := /usr/lib /opt/homebrew/lib
 PROGRAM_LIBRARIES := SDL2 SDL2_ttf SDL2_image
 
 #change if g++ is prefered.
@@ -18,11 +18,14 @@ LDFLAGS += $(foreach librarydir,$(PROGRAM_LIBRARY_DIRS),-L$(librarydir))
 LDLIBS += $(foreach library,$(PROGRAM_LIBRARIES),-l$(library))
 
 $(PROGRAM_PATH) : $(PROGRAM_OBJS)
-	mkdir $(PROGRAM_LOCATION)
+	mkdir -p $(PROGRAM_LOCATION)
 	$(CC) $(LDFLAGS) $^ -o $@ $(LDLIBS)
 
 %.o : %.cpp
 	$(CC) $(CPPFLAGS) -c $< -o $@
+
+run :
+	./$(PROGRAM_PATH)
 
 all : $(PROGRAM_PATH)
 
